@@ -1,0 +1,59 @@
+class PenggunaModel:
+    def __init__(self, id,email, nama_lengkap, katasandi, ):
+        self.id = id
+        self.email = email
+        self.nama_lengkap = nama_lengkap
+        self.katasandi = katasandi
+        
+class AnggotaModel:
+    def __init__(self, id, nama_lengkap, alamat,kota,notelp, email,):
+        self.id = id
+        self.nama_lengkap = nama_lengkap
+        self.alamat = alamat
+        self.kota = kota
+        self.notelp = notelp
+        self.email = email
+        
+class PenerbitModel:
+    def __init__(self, id, penerbit, kota,):
+        self.id = id
+        self.penerbit = penerbit
+        self.kota = kota
+
+class KategoriModel:
+    def __init__(self, id, kategori, kode_ddc):
+        self.id = id
+        self.kategori = kategori
+        self.kode_ddc = kode_ddc
+        
+class BukuModel:
+    def __init__(self, id, tb_kategori_id, tb_penerbit_id,judul,edisi,cetakan ,sinopsis,halaman,penulis ,tahun ,cover_file ):
+        self.id = id
+        self.tb_kategori_id = tb_kategori_id
+        self.tb_penerbit_id = tb_penerbit_id
+        self.judul = judul
+        self.edisi = edisi 
+        self.cetakan = cetakan 
+        self.sinopsis = sinopsis
+        self.halaman = halaman 
+        self.penulis = penulis 
+        self.tahun = tahun 
+        self.cover_file = cover_file
+        
+class KoleksiBukuModel:
+    def __init__(self, id, tb_buku_id,nomor_koleksi , status_koleksi):
+        self.id = id
+        self.tb_buku_id = tb_buku_id
+        self.nomor_koleksi = nomor_koleksi
+        self.status_koleksi = status_koleksi
+        
+class PeminjamanModel:
+    def __init__(self, id,tgl_peminjaman, tgl_pengembalian,tb_pengguna_id_peminjaman ,tb_pengguna_id_pengembalian,tb_anggota,tb_koleksibuku,denda):
+        self.id = id
+        self.tgl_peminjaman = tgl_peminjaman
+        self.tgl_pengembalian = tgl_pengembalian
+        self.tb_pengguna_id_peminjaman = tb_pengguna_id_peminjaman 
+        self.tb_pengguna_id_pengembalian = tb_pengguna_id_pengembalian
+        self.tb_anggota = tb_anggota
+        self.tb_koleksibuku = tb_koleksibuku
+        self.denda = denda
