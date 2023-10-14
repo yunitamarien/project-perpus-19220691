@@ -1,21 +1,36 @@
 <?php
-
 namespace App\Models;
-
 use CodeIgniter\Model;
-
 class KoleksiBukuModel extends Model
 {
-    protected $table = 'koleksi_buku'; // Name of your database table for book collections
-    protected $primaryKey = 'id'; // Primary key column name
-    protected $allowedFields = ['buku_id', 'nama_koleksi', 'deskripsi']; // Fields that can be inserted/updated
+    protected $DBGroup          = 'default';
+    protected $table            = 'tb_koleksibuku';
+    protected $primaryKey       = 'id';
+    protected $useAutoIncrement = true;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = false;
+    protected $allowedFields    = ['*'];
 
-    // Other model methods can be added here as needed
-
-    public function getBookCollection($collectionId)
-    {
-        return $this->where('id', $collectionId)->first();
-    }
-
-    // Define other custom methods for managing book collections
+    // Dates
+    protected $useTimestamps = false;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 }
