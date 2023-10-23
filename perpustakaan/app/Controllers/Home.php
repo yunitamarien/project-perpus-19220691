@@ -6,6 +6,10 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('welcome_message');
+       
+        $p = session()->get('pengguna'); 
+        return view('dashboard/dashboard', [
+            'pengguna' => $p
+        ]);
     }
 }

@@ -11,6 +11,9 @@ $routes->get('/buku/edit/(:num)', 'BukuController::edit/$1');
 $routes->post('/buku/create', 'BukuController::create');
 $routes->post('/buku/hapus', 'BukuController::hapus');
 
+$routes->get('/login', 'LoginControllers::index');
+$routes->post('/login', 'LoginControllers::ceklogin');
+$routes->get('/logout', 'LoginControllers::logout');
 
 $routes->get('/KoleksiBuku', 'KoleksiBukuController::index');
 $routes->get('/KoleksiBuku/form', 'KoleksiBukuController::form');
