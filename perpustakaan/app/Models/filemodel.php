@@ -1,3 +1,4 @@
+
 class PenggunaModel:
     def __init__(self, id,email, nama_lengkap, katasandi, ):
         self.id = id
